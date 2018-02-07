@@ -9,7 +9,7 @@
     "toc",
     "anchor"
   ],
-  "author": "Yuki Takei",
+  "author": "Yuki Takei <yuki@weseek.co.jp>",
   "license": "MIT",
   "repository": "https://github.com/yuki-takei/markdown-it-toc-and-anchor-with-slugid.git",
   "main": "dist/index.js",
