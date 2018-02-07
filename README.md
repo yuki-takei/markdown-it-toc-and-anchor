@@ -193,7 +193,7 @@ documents on the same page.
 
 #### `slugify`
 
-(default: [jeremys/uslug](jeremys/uslug))
+(default: [jeremys/uslug](https://www.npmjs.com/package/uslug))
 
 Allows you to set the custom function to slygify ids.
 
