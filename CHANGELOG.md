@@ -1,5 +1,6 @@
-# 4.1.2 - 2017-03-07
+# 4.1.2 - 2018-02-08
 
+- Added: ``slugify`` option
 - Fixed: TypeError: Cannot read property 'breaks' of undefined
   ([#30](https://github.com/medfreeman/markdown-it-toc-and-anchor/issues/30))
 
