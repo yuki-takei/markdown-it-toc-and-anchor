@@ -1,7 +1,7 @@
 {
-  "name": "markdown-it-toc-and-anchor",
+  "name": "markdown-it-toc-and-anchor-with-slagid",
   "version": "4.1.2",
-  "description": "markdown-it plugin to add toc and anchor links in headings",
+  "description": "markdown-it plugin to add toc and anchor links with slugified id in headings",
   "keywords": [
     "markdown-it",
     "markdown-it-plugin",
@@ -9,9 +9,9 @@
     "toc",
     "anchor"
   ],
-  "author": "Maxime Thirouin",
+  "author": "Yuki Takei",
   "license": "MIT",
-  "repository": "https://github.com/medfreeman/markdown-it-toc-and-anchor.git",
+  "repository": "https://github.com/yuki-takei/markdown-it-toc-and-anchor-with-slugid.git",
   "main": "dist/index.js",
   "files": [
     "dist",
