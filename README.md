@@ -5,12 +5,12 @@
 [![Coverage Status](https://img.shields.io/coveralls/medfreeman/markdown-it-toc-and-anchor/master.svg)](https://coveralls.io/github/medfreeman/markdown-it-toc-and-anchor?branch=master)
 [![Dependency Status](https://img.shields.io/david/medfreeman/markdown-it-toc-and-anchor.svg)](https://david-dm.org/medfreeman/markdown-it-toc-and-anchor)
 
-> markdown-it plugin to add toc and anchor links in headings
+> markdown-it plugin to add toc and anchor links slugified id in headings
 
 ## Installation
 
 ```console
-$ npm install markdown-it-toc-and-anchor
+$ npm install markdown-it-toc-and-anchor-with-slugid
 ```
 
 ## Usage
@@ -19,7 +19,8 @@ $ npm install markdown-it-toc-and-anchor
 
 ```js
 import markdownIt from "markdown-it"
-import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
+import markdownItTocAndAnchor from "markdown-it-toc-and-anchor-with-slugid"
+import uslug from 'uslug';
 
 markdownIt({
     html: true,
@@ -28,6 +29,9 @@ markdownIt({
   })
     .use(markdownItTocAndAnchor, {
       // ...options
+      slugify: (header) => {
+        return encodeURIComponent(uslug(header));
+      }
     })
     .render(md)
 ```
@@ -36,7 +40,7 @@ markdownIt({
 
 ```js
 var markdownIt = require('markdown-it'),
-    markdownItTocAndAnchor = require('markdown-it-toc-and-anchor').default;
+    markdownItTocAndAnchor = require('markdown-it-toc-and-anchor-with-slugid').default;
 
 markdownIt({
     html: true,
@@ -186,6 +190,12 @@ Allows you to customize the anchor link class
 
 Allows you to reset (or not) ids incrementation. Use it if you will have multiple
 documents on the same page.
+
+#### `slugify`
+
+(default: [jeremys/uslug](jeremys/uslug))
+
+Allows you to set the custom function to slygify ids.
 
 ---
 
