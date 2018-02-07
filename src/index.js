@@ -11,8 +11,8 @@ let tocHtml = ""
 
 const repeat = (string, num) => new Array(num + 1).join(string)
 
-const makeSafe = (string, headingIds) => {
-  const key = uslug(string) // slugify
+const makeSafe = (string, headingIds, slugify) => {
+  const key = slugify(string)
   if (!headingIds[key]) {
     headingIds[key] = 0
   }
@@ -140,6 +140,7 @@ export default function(md, options) {
     resetIds: true,
     anchorLinkSpace: true,
     anchorLinkSymbolClassName: null,
+    slugify: uslug,
     ...options,
   }
 
@@ -175,12 +176,12 @@ export default function(md, options) {
           // headings that contain links have to be processed
           // differently since nested links aren't allowed in markdown
           content = heading.children[1].content
-          heading._tocAnchor = makeSafe(content, headingIds)
+          heading._tocAnchor = makeSafe(content, headingIds, options.slugify)
         }
         else {
           content = heading.content
           heading._tocAnchor = makeSafe(heading.children
-              .reduce((acc, t) => acc + t.content, ""), headingIds)
+              .reduce((acc, t) => acc + t.content, ""), headingIds, options.slugify)
         }
 
         tocArray.push({
