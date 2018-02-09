@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-toc-and-anchor-with-slugid",
-  "version": "4.1.2",
+  "version": "1.1.2",
   "description": "markdown-it plugin to add toc and anchor links with slugified id in headings",
   "keywords": [
     "markdown-it",
