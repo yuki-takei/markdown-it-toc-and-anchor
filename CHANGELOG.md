@@ -1,6 +1,10 @@
-# 4.1.2 - 2018-02-08
+# 1.1.2 - 2018-02-08
 
+- Forked from [medfreeman/markdown-it-toc-and-anchor](https://github.com/medfreeman/markdown-it-toc-and-anchor) and released as markdown-it-toc-and-anchor-with-slugid v1.1.2 
 - Added: ``slugify`` option
+
+# 4.1.2 - 2017-03-07
+
 - Fixed: TypeError: Cannot read property 'breaks' of undefined
   ([#30](https://github.com/medfreeman/markdown-it-toc-and-anchor/issues/30))
 
