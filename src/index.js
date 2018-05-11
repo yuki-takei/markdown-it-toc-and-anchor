@@ -1,5 +1,4 @@
 import clone from "clone"
-import uslug from "uslug"
 import Token from "markdown-it/lib/token"
 
 const TOC = "@[toc]"
@@ -140,7 +139,9 @@ export default function(md, options) {
     resetIds: true,
     anchorLinkSpace: true,
     anchorLinkSymbolClassName: null,
-    slugify: uslug,
+    slugify: (header) => {
+      return encodeURIComponent(header.trim())
+    },
     ...options,
   }
 

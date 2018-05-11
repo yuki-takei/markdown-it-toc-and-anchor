@@ -29,6 +29,8 @@ markdownIt({
   })
     .use(markdownItTocAndAnchor, {
       // ...options
+
+      // you can specify custom slugify function
       slugify: (header) => {
         return encodeURIComponent(uslug(header));
       }
