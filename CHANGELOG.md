@@ -1,3 +1,8 @@
+# 1.1.3 - 2018-05-12
+
+- Removed: `uslug` package
+  - The default slugify function is now `encodeURIComponent`
+
 # 1.1.2 - 2018-02-08
 
 - Forked from [medfreeman/markdown-it-toc-and-anchor](https://github.com/medfreeman/markdown-it-toc-and-anchor) and released as markdown-it-toc-and-anchor-with-slugid v1.1.2 
