@@ -6,7 +6,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback", (t) => {
   const callback = function(tocMarkdown, tocArray, tocHtml) {
     t.is(
       tocMarkdown,
-      "* [Heading](#heading)\n",
+      "* [Heading](#Heading)\n",
       "should work with disabled toc insertion + callback, returning toc only"
     )
     t.deepEqual(
@@ -14,7 +14,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback", (t) => {
       [
         {
           content: "Heading",
-          anchor: "heading",
+          anchor: "Heading",
           level: 1,
         },
       ],
@@ -23,7 +23,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback", (t) => {
     t.is(
       tocHtml,
       `<ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>\n`,
       "should work with disabled toc insertion + callback, returning toc only"
     )
@@ -36,7 +36,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback", (t) => {
         tocCallback: callback,
       }
     ),
-    "<h1 id=\"heading\">Heading</h1>\n",
+    "<h1 id=\"Heading\">Heading</h1>\n",
     "should work with disabled toc insertion + callback, returning heading only"
   )
 
@@ -47,7 +47,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-toc", (t) => {
   const callback = function(tocMarkdown, tocArray, tocHtml) {
     t.is(
       tocMarkdown,
-      "* [Heading](#heading)\n",
+      "* [Heading](#Heading)\n",
       "should work with enabled toc insertion + callback, returning toc only"
     )
     t.deepEqual(
@@ -55,7 +55,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-toc", (t) => {
       [
         {
           content: "Heading",
-          anchor: "heading",
+          anchor: "Heading",
           level: 1,
         },
       ],
@@ -64,7 +64,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-toc", (t) => {
     t.is(
       tocHtml,
       `<ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>\n`,
       "should work with enabled toc insertion + callback, returning toc only"
     )
@@ -80,10 +80,10 @@ test.cb("markdown-it-toc-and-anchor toc-callback-toc", (t) => {
       }
     ),
     `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
     "should also work with callback, returning toc and heading"
   )
 
@@ -94,7 +94,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-md", (t) => {
   const callback = function(tocMarkdown, tocArray, tocHtml) {
     t.is(
       tocMarkdown,
-      "* [Heading](#heading)\n",
+      "* [Heading](#Heading)\n",
       `should work with disabled toc insertion +
       callback in md options, returning toc only`
     )
@@ -103,7 +103,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-md", (t) => {
       [
         {
           content: "Heading",
-          anchor: "heading",
+          anchor: "Heading",
           level: 1,
         },
       ],
@@ -113,7 +113,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-md", (t) => {
     t.is(
       tocHtml,
       `<ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>\n`,
       `should work with disabled toc insertion +
       callback in md options, returning toc only`
@@ -128,7 +128,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-md", (t) => {
         tocCallback: callback,
       }
     ),
-    "<h1 id=\"heading\">Heading</h1>\n",
+    "<h1 id=\"Heading\">Heading</h1>\n",
     `should work with disabled toc insertion +
     callback in md options, returning heading only`
   )
@@ -140,7 +140,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-env", (t) => {
   const callback = function(tocMarkdown, tocArray, tocHtml) {
     t.is(
       tocMarkdown,
-      "* [Heading](#heading)\n",
+      "* [Heading](#Heading)\n",
       `should work with disabled toc insertion +
       callback in md render env, returning toc only`
     )
@@ -149,7 +149,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-env", (t) => {
       [
         {
           content: "Heading",
-          anchor: "heading",
+          anchor: "Heading",
           level: 1,
         },
       ],
@@ -159,7 +159,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-env", (t) => {
     t.is(
       tocHtml,
       `<ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>\n`,
       `should work with disabled toc insertion +
       callback in md render env, returning toc only`
@@ -175,7 +175,7 @@ test.cb("markdown-it-toc-and-anchor toc-callback-env", (t) => {
         tocCallback: callback,
       }
     ),
-    "<h1 id=\"heading\">Heading</h1>\n",
+    "<h1 id=\"Heading\">Heading</h1>\n",
     `should work with disabled toc insertion +
     callback in md render env, returning heading only`
   )
