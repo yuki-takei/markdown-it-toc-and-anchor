@@ -182,7 +182,8 @@ export default function(md, options) {
         else {
           content = heading.content
           heading._tocAnchor = makeSafe(heading.children
-              .reduce((acc, t) => acc + t.content, ""), headingIds, options.slugify)
+              .reduce((acc, t) => acc + t.content, ""),
+              headingIds, options.slugify)
         }
 
         tocArray.push({
