@@ -41,10 +41,10 @@ test("markdown-it-toc-and-anchor toc", (t) => {
     ),
     `<p>test
 <ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
     "should work with soft breaks"
   )
 
@@ -57,7 +57,7 @@ test("markdown-it-toc-and-anchor toc", (t) => {
       }
     ),
     `<p>@[tac]</p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
     "should not generate toc with different tokens starting with @["
   )
 
@@ -71,11 +71,11 @@ test
       }
     ),
     `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 
 test</p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
     `should work when there is a line break between @[toc]
 and next element in the same inline token`
   )
@@ -90,10 +90,10 @@ and next element in the same inline token`
       }
     ),
     `<p><ul class="test">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
     "should allow custom class"
   )
 
@@ -109,7 +109,7 @@ and next element in the same inline token`
 <li><a href="#%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90">新年快乐</a></li>
 </ul>
 </p>
-<h1 id="新年快乐">新年快乐</h1>\n`,
+<h1 id="%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90">新年快乐</h1>\n`,
     "should support unicode headings"
   )
 
@@ -126,17 +126,17 @@ and next element in the same inline token`
       }
     ),
     `<p><ul class="markdownIt-TOC">
-<li><a href="#two">Two</a>
+<li><a href="#Two">Two</a>
 <ul>
-<li><a href="#three">Three</a></li>
+<li><a href="#Three">Three</a></li>
 </ul>
 </li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>
-<h2 id="two">Two</h2>
-<h3 id="three">Three</h3>
-<h1 id="one">One</h1>\n`,
+<h1 id="Heading">Heading</h1>
+<h2 id="Two">Two</h2>
+<h3 id="Three">Three</h3>
+<h1 id="One">One</h1>\n`,
     "should work when skipping first level"
   )
   
@@ -153,18 +153,18 @@ and next element in the same inline token`
       }
     ),
     `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a>
+<li><a href="#Heading">Heading</a>
 <ul>
-<li><a href="#two">Two</a></li>
+<li><a href="#Two">Two</a></li>
 </ul>
 </li>
-<li><a href="#one">One</a></li>
+<li><a href="#One">One</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>
-<h2 id="two">Two</h2>
-<h3 id="three">Three</h3>
-<h1 id="one">One</h1>\n`,
+<h1 id="Heading">Heading</h1>
+<h2 id="Two">Two</h2>
+<h3 id="Three">Three</h3>
+<h1 id="One">One</h1>\n`,
     "should work when skipping last level"
   )
 
@@ -176,12 +176,12 @@ and next element in the same inline token`
       { toc: true }
     ),
     `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
-<li><a href="#heading-2">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
+<li><a href="#Heading-2">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>
-<h1 id="heading-2">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>
+<h1 id="Heading-2">Heading</h1>\n`,
     "should work with smiliar levels and similar titles"
   )
 
@@ -195,14 +195,14 @@ and next element in the same inline token`
       { toc: true }
     ),
   `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">'Heading' ?</a></li>
-<li><a href="#lel">$.lel!</a></li>
-<li><a href="#lel-2">$.lel?</a></li>
+<li><a href="#'Heading'%20%3F">'Heading' ?</a></li>
+<li><a href="#%24.lel!">$.lel!</a></li>
+<li><a href="#%24.lel%3F">$.lel?</a></li>
 </ul>
 </p>
-<h1 id="heading">'Heading' ?</h1>
-<h1 id="lel">$.lel!</h1>
-<h1 id="lel-2">$.lel?</h1>\n`,
+<h1 id="'Heading'%20%3F">'Heading' ?</h1>
+<h1 id="%24.lel!">$.lel!</h1>
+<h1 id="%24.lel%3F">$.lel?</h1>\n`,
     "should work with special chars"
   )
 
@@ -269,23 +269,23 @@ and next element in the same inline token`
       { toc: true }
     ),
     `<p><ul class="markdownIt-TOC">
-<li><a href="#heading-1">Heading 1</a>
+<li><a href="#Heading%201">Heading 1</a>
 <ul>
-<li><a href="#subheading">SubHeading</a></li>
+<li><a href="#SubHeading">SubHeading</a></li>
 </ul>
 </li>
-<li><a href="#heading-2">Heading 2</a>
+<li><a href="#Heading%202">Heading 2</a>
 *
 <ul>
-<li><a href="#deeper-heading">Deeper Heading</a></li>
+<li><a href="#Deeper%20Heading">Deeper Heading</a></li>
 </ul>
 </li>
 </ul>
 </p>
-<h1 id="heading-1">Heading 1</h1>
-<h2 id="subheading">SubHeading</h2>
-<h1 id="heading-2">Heading 2</h1>
-<h3 id="deeper-heading">Deeper Heading</h3>\n`,
+<h1 id="Heading%201">Heading 1</h1>
+<h2 id="SubHeading">SubHeading</h2>
+<h1 id="Heading%202">Heading 2</h1>
+<h3 id="Deeper%20Heading">Deeper Heading</h3>\n`,
     "should work"
   )
 
@@ -295,9 +295,9 @@ and next element in the same inline token`
       { resetIds: true }
     ),
     [
-      "<h1 id=\"heading\">Heading</h1>\n",
-      "<h1 id=\"heading\">Heading</h1>\n",
-      "<h1 id=\"heading\">Heading</h1>\n",
+      "<h1 id=\"Heading\">Heading</h1>\n",
+      "<h1 id=\"Heading\">Heading</h1>\n",
+      "<h1 id=\"Heading\">Heading</h1>\n",
     ],
     `should return the same anchor hrefs for the same markdown headings with
 same names on different renderings with the same markdownIt instance when 
@@ -310,9 +310,9 @@ resetIds is true`
       { resetIds: false }
     ),
     [
-      "<h1 id=\"heading\">Heading</h1>\n",
-      "<h1 id=\"heading-2\">Heading</h1>\n",
-      "<h1 id=\"heading-3\">Heading</h1>\n",
+      "<h1 id=\"Heading\">Heading</h1>\n",
+      "<h1 id=\"Heading-2\">Heading</h1>\n",
+      "<h1 id=\"Heading-3\">Heading</h1>\n",
     ],
     `should return different anchor hrefs for the same markdown headings with 
 same names on different renderings with the same markdownIt instance when 
@@ -336,20 +336,20 @@ resetIds is false`
     ),
     [
       `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
       `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
       `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
     ],
     `should return the same anchor hrefs for the same markdown headings with 
 same names on different renderings with the same markdownIt instance when 
@@ -373,20 +373,20 @@ resetIds is true and toc is true`
     ),
     [
       `<p><ul class="markdownIt-TOC">
-<li><a href="#heading">Heading</a></li>
+<li><a href="#Heading">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading">Heading</h1>\n`,
+<h1 id="Heading">Heading</h1>\n`,
       `<p><ul class="markdownIt-TOC">
-<li><a href="#heading-2">Heading</a></li>
+<li><a href="#Heading-2">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading-2">Heading</h1>\n`,
+<h1 id="Heading-2">Heading</h1>\n`,
       `<p><ul class="markdownIt-TOC">
-<li><a href="#heading-3">Heading</a></li>
+<li><a href="#Heading-3">Heading</a></li>
 </ul>
 </p>
-<h1 id="heading-3">Heading</h1>\n`,
+<h1 id="Heading-3">Heading</h1>\n`,
     ],
     `should return different anchor hrefs for the same markdown headings with 
 same names on different renderings with the same markdownIt instance when 
