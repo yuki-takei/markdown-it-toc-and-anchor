@@ -1,6 +1,6 @@
 # 1.1.4 - 2018-06-06
 
-- Remove nested anchor
+- Improvement: Remove nested anchor
 
 # 1.1.3 - 2018-05-12
 
